@@ -9,11 +9,7 @@ class App extends Component {
                   
               <nav class="navbar navbar-dark bg-dark">
                   <div class="container">
-                      <a class="navbar-brand" href="#">Home</a>
-                      <div class="topnav-right">
-                      <a class="navbar-brand" href="#login">Login</a>
-                      <a class="navbar-brand" href="#logout">Logout </a>
-                 </div>
+              <a class="navbar-brand" href="#">Home</a>
              </div>
               </nav>
            

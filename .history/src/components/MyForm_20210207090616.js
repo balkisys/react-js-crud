@@ -76,8 +76,8 @@ class MyForm extends Component {
        return (
       <form className= "ui form"> 
        <div className="fields">
-           <div className="six wide field"> 
-           <label> Task Name </label>
+           <div className="four wide field"> 
+           <label> First Name </label>
            <input
             type="text" 
             name="task_name"
@@ -86,7 +86,7 @@ class MyForm extends Component {
             value={this.state.form.task_name} />
            </div>
 
-           <div className="six wide field"> 
+           <div className="four wide field"> 
            <label> Task Description </label>
            <input 
            type="text"
@@ -96,7 +96,7 @@ class MyForm extends Component {
             value={this.state.form.task_discription} />
            </div>
 
-           <div className="six wide field"> 
+           <div className="four wide field"> 
            <button  className={this.state.btnClass} onClick={this.onFormSubmit}>
                 {this.state.btnName}
                 </button>

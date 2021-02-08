@@ -3,7 +3,7 @@ import React , {Component} from "react" ;
 
 class MyForm extends Component {
     state = {
-        form: {task_name:'' , task_discription:'',isEdit: false},
+        form: {first_name:'' , last_name:'', email:'', isEdit: false},
         btnName: "Save",
         btnClass:"ui primary button submit-button"
     }; 
@@ -12,9 +12,9 @@ class MyForm extends Component {
 
     }
     componentDidUpdate(prevProps) {
-        if(prevProps !== this.props && !this.isEmpty(this.props.task)) {
+        if(prevProps !== this.props && !this.isEmpty(this.props.customer)) {
            this.setState({
-               form: {...this.props.task, isEdit: true},
+               form: {...this.props.customer, isEdit: true},
                btnName: "Update",
                btnClass: "ui orange button submit-button"
            });
@@ -48,24 +48,28 @@ class MyForm extends Component {
       this.clearFormFields()
     };
     formValidation = () => {
-        // task name
-        if(document.getElementsByName("task_name")[0].value === "" ){
-           alert('Enter task name') ;
+        // first name
+        if(document.getElementsByName("first_name")[0].value === "" ){
+           alert('Enter first name') ;
            return false ; 
         }
-        //task description
-        if(document.getElementsByName("task_discription")[0].value === "" ){
-            alert('Enter task description ') ;
+        // last name
+        if(document.getElementsByName("last_name")[0].value === "" ){
+            alert('Enter last name') ;
             return false ; 
          }
-         
+         // email
+        if(document.getElementsByName("email")[0].value === "" ){
+            alert('Enter email') ;
+            return false ; 
+         }
          return true ;
        
     };
    clearFormFields = () => {
        // change form state
        this.setState({
-        form: {task_name:'' , task_discription:'',  isEdit: false}
+        form: {first_name:'' , last_name:'', email:'', isEdit: false}
 
        });
        // clear form fields 
@@ -76,8 +80,8 @@ class MyForm extends Component {
        return (
       <form className= "ui form"> 
        <div className="fields">
-           <div className="six wide field"> 
-           <label> Task Name </label>
+           <div className="four wide field"> 
+           <label> First Name </label>
            <input
             type="text" 
             name="task_name"
@@ -86,17 +90,17 @@ class MyForm extends Component {
             value={this.state.form.task_name} />
            </div>
 
-           <div className="six wide field"> 
+           <div className="four wide field"> 
            <label> Task Description </label>
            <input 
            type="text"
-            name="task_discription" 
+            name="task_description" 
             placeholder="Task Description"
             onChange={this.handleChange}  
-            value={this.state.form.task_discription} />
+            value={this.state.form.task_description} />
            </div>
 
-           <div className="six wide field"> 
+           <div className="four wide field"> 
            <button  className={this.state.btnClass} onClick={this.onFormSubmit}>
                 {this.state.btnName}
                 </button>

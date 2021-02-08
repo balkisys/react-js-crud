@@ -10,12 +10,12 @@ class Customer extends Component {
       this.props.onEdit(this.props.customer);
     };
     render() {
-        const {id,first_name,last_name,email} = this.props.customer;
+        const {id,task_name,task_discription} = this.props.customer;
         return (
             <tr>
                             <td style={{ textAlign: "center"}}>{id}</td>
-                             <td>{`${first_name} ${last_name}`}</td>
-                             <td>{email}</td>
+                             <td>{task_name }</td>
+                             <td>{task_discription}</td>
                             <td>
                                 <button className="mini ui blue button" onClick={this.onEdit}> Edit</button>
                                 <button className="mini ui red button" onClick={this.onDelete} > Delete</button>

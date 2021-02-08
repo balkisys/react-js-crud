@@ -13,7 +13,7 @@ class App extends Component {
                       <div class="topnav-right">
                       <a class="navbar-brand" href="#login">Login</a>
                       <a class="navbar-brand" href="#logout">Logout </a>
-                 </div>
+  </div>
              </div>
               </nav>
            

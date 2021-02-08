@@ -21,8 +21,8 @@ class CustomerList extends Component {
                 <thead>
                      <tr>
                          <th style={{ width: '50px' , textAlign: "center"}}>#</th>
-                         <th>Name</th>
-                         <th>E-mail</th>
+                         <th>Task Name</th>
+                         <th>Task Description</th>
                          <th style={{ width: "148px"}}>Action </th>
                      </tr>
                     </thead>  

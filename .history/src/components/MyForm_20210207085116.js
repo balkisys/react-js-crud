@@ -3,7 +3,7 @@ import React , {Component} from "react" ;
 
 class MyForm extends Component {
     state = {
-        form: {task_name:'' , task_discription:'',isEdit: false},
+        form: {task_name:'' , task_description:'', email:'', isEdit: false},
         btnName: "Save",
         btnClass:"ui primary button submit-button"
     }; 
@@ -12,9 +12,9 @@ class MyForm extends Component {
 
     }
     componentDidUpdate(prevProps) {
-        if(prevProps !== this.props && !this.isEmpty(this.props.task)) {
+        if(prevProps !== this.props && !this.isEmpty(this.props.customer)) {
            this.setState({
-               form: {...this.props.task, isEdit: true},
+               form: {...this.props.customer, isEdit: true},
                btnName: "Update",
                btnClass: "ui orange button submit-button"
            });
@@ -54,7 +54,7 @@ class MyForm extends Component {
            return false ; 
         }
         //task description
-        if(document.getElementsByName("task_discription")[0].value === "" ){
+        if(document.getElementsByName("task_description")[0].value === "" ){
             alert('Enter task description ') ;
             return false ; 
          }
@@ -65,7 +65,7 @@ class MyForm extends Component {
    clearFormFields = () => {
        // change form state
        this.setState({
-        form: {task_name:'' , task_discription:'',  isEdit: false}
+        form: {task_name:'' , task_description:'',  isEdit: false}
 
        });
        // clear form fields 
@@ -76,8 +76,8 @@ class MyForm extends Component {
        return (
       <form className= "ui form"> 
        <div className="fields">
-           <div className="six wide field"> 
-           <label> Task Name </label>
+           <div className="four wide field"> 
+           <label> First Name </label>
            <input
             type="text" 
             name="task_name"
@@ -86,17 +86,17 @@ class MyForm extends Component {
             value={this.state.form.task_name} />
            </div>
 
-           <div className="six wide field"> 
+           <div className="four wide field"> 
            <label> Task Description </label>
            <input 
            type="text"
-            name="task_discription" 
+            name="task_description" 
             placeholder="Task Description"
             onChange={this.handleChange}  
-            value={this.state.form.task_discription} />
+            value={this.state.form.task_description} />
            </div>
 
-           <div className="six wide field"> 
+           <div className="four wide field"> 
            <button  className={this.state.btnClass} onClick={this.onFormSubmit}>
                 {this.state.btnName}
                 </button>

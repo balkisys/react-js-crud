@@ -11,9 +11,9 @@ class App extends Component {
                   <div class="container">
                       <a class="navbar-brand" href="#">Home</a>
                       <div class="topnav-right">
-                      <a class="navbar-brand" href="#login">Login</a>
-                      <a class="navbar-brand" href="#logout">Logout </a>
-                 </div>
+                      <a class="navbar-brand" href="#search">Login</a>
+                      <a class="navbar-brand" href="#about">Logout </a><i class="fa fa-sign-out"></i>
+  </div>
              </div>
               </nav>
            
